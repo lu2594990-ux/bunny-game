@@ -12,24 +12,29 @@ jQuery(() => {
                 <input type="checkbox" id="bny-toggle" />
                 <span>Show Bunny</span>
             </label>
+            <div id="bny-status" style="padding:5px 0;font-size:12px;color:#888;">Bunny is hidden</div>
         </div>
     </div>`);
 
-    $("body").append('<button id="bny-fab" style="display:none;">🐰</button>');
+    var fab = document.createElement("div");
+    fab.id = "bny-fab";
+    fab.textContent = "\uD83D\uDC30";
+    fab.style.cssText = "position:fixed;bottom:30px;right:20px;z-index:2147483647;width:52px;height:52px;font-size:24px;border-radius:50%;background:linear-gradient(135deg,#ff6b9d,#c44569);color:white;border:2px solid rgba(255,255,255,0.3);cursor:pointer;box-shadow:0 4px 15px rgba(255,107,157,0.5);display:none;align-items:center;justify-content:center;padding:0;margin:0;";
+    document.body.appendChild(fab);
 
     var saved = localStorage.getItem("bnyShow");
     if (saved === "1") {
         $("#bny-toggle").prop("checked", true);
-        $("#bny-fab").css("display", "flex");
+        fab.style.display = "flex";$("#bny-status").text("Bunny is visible!");
     }
 
     $("#bny-toggle").on("change", function () {
         var on = $(this).prop("checked");
-        $("#bny-fab").css("display", on ? "flex" : "none");
-        localStorage.setItem("bnyShow", on ? "1" : "0");
+        fab.style.display = on ? "flex" : "none";
+        localStorage.setItem("bnyShow", on ? "1" : "0");$("#bny-status").text(on ? "Bunny is visible!" : "Bunny is hidden");
     });
 
-    $("#bny-fab").on("click", function () {
+    fab.addEventListener("click", function () {
         alert("Bunny is here! It works!");
     });
 });
