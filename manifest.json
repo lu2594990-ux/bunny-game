@@ -1,0 +1,11 @@
+{
+    "display_name": "Bunny Game",
+    "loading_order": 5,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "CodeHusband",
+    "version": "3.0.0",
+    "auto_update": true
+}
