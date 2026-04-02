@@ -468,7 +468,7 @@ jQuery(() => {
                 ],
                 temperature: st.temp,
                 top_p: st.topp,
-                max_tokens: 4096
+                max_tokens: 32000
             })
         }).then(function (res) {
             if (!res.ok) return res.text().then(function (t) {
