@@ -302,7 +302,7 @@ jQuery(() => {
             (function (q, idx) {
                 var chip = document.createElement("div");
                 chip.className = "hc";
-                varht = document.createElement("span");
+                var ht = document.createElement("span");
                 ht.className = "ht";
                 ht.textContent = q;
                 ht.addEventListener("click", function (e) { e.stopPropagation(); sInput.value = q; doSearch(q); });
