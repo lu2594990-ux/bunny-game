@@ -208,7 +208,7 @@ jQuery(() => {
     });
 
     var sInput = panel.querySelector(".si");
-    varsBtnEl = panel.querySelector(".sbtn");
+    var sBtnEl = panel.querySelector(".sbtn");
     var cBtnEl = panel.querySelector(".cbtn");
     var iframe = panel.querySelector("iframe");
     var fbLink = panel.querySelector(".fb");
